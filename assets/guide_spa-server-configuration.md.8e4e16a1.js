@@ -1,4 +1,4 @@
-import{_ as e,c as n,o as t,a as o}from"./app.efe36196.js";const _='{"title":"Configuration","description":"","frontmatter":{},"headers":[{"level":2,"title":"Overview","slug":"overview"},{"level":2,"title":"Config Reference","slug":"config-reference"}],"relativePath":"guide/spa-server-configuration.md"}',i={},a=o(`<h1 id="configuration" tabindex="-1">Configuration <a class="header-anchor" href="#configuration" aria-hidden="true">#</a></h1><h2 id="overview" tabindex="-1">Overview <a class="header-anchor" href="#overview" aria-hidden="true">#</a></h2><p>The config format is <a href="https://github.com/lightbend/config/blob/main/HOCON.md" target="_blank" rel="noopener noreferrer">HOCON(Human-Optimized Config Object Notation)</a>.</p><p>The config default path is &#39;./config.conf&#39;, you can change it by environment <code>SPA_CONFIG</code>.</p><h2 id="config-reference" tabindex="-1">Config Reference <a class="header-anchor" href="#config-reference" aria-hidden="true">#</a></h2><div class="language-hocon"><pre><code># http bind, if set port &lt;= 0, will disable http server(need set https config)
+import{_ as e,c as n,o as t,a as o}from"./app.33b64e60.js";const _='{"title":"Configuration","description":"","frontmatter":{},"headers":[{"level":2,"title":"Overview","slug":"overview"},{"level":2,"title":"Config Reference","slug":"config-reference"}],"relativePath":"guide/spa-server-configuration.md"}',i={},a=o(`<h1 id="configuration" tabindex="-1">Configuration <a class="header-anchor" href="#configuration" aria-hidden="true">#</a></h1><h2 id="overview" tabindex="-1">Overview <a class="header-anchor" href="#overview" aria-hidden="true">#</a></h2><p>The config format is <a href="https://github.com/lightbend/config/blob/main/HOCON.md" target="_blank" rel="noopener noreferrer">HOCON(Human-Optimized Config Object Notation)</a>.</p><p>The config default path is &#39;./config.conf&#39;, you can change it by environment <code>SPA_CONFIG</code>.</p><h2 id="config-reference" tabindex="-1">Config Reference <a class="header-anchor" href="#config-reference" aria-hidden="true">#</a></h2><div class="language-hocon"><pre><code># http bind, if set port &lt;= 0, will disable http server(need set https config)
 port = 80
 addr = &quot;0.0.0.0&quot;
 
@@ -36,9 +36,7 @@ file_dir = &quot;/data&quot;
 # default cache config
 //cache {
 //  # if file size &gt; max_size, it will not be cached. default is 10485760 (10MB).
-//  # do not use size unit format like 50MB!
-//  # It&#39;s blocked by [hocon #62](https://github.com/mockersf/hocon.rs/issues/62)
-//  max_size = 10485760  //10MB 10*1024*1024
+//  max_size = 10MB
 
 //  # http header Cache-Control config,
 //  # optional, if not set, won&#39;t sender this header to client
@@ -74,6 +72,14 @@ file_dir = &quot;/data&quot;
 //  # max file size allowed to be uploaded,
 //  # default is 30MB(30*1024*1024)
 //  max_upload_size = 31457280
+
+//  # delete deprecated version by cron
+//  deprecated_version_delete {
+//    # default value: every day at 3am.
+//    cron: &quot;0 0 3 * * *&quot;,
+//    # default value is 2
+//    max_preserve: 2,
+//  }
 //}
 
 
@@ -95,4 +101,4 @@ file_dir = &quot;/data&quot;
 //    http_redirect_to_https: \${https.http_redirect_to_https}
 //  }
 //}]
-</code></pre></div>`,6),s=[a];function c(r,l,d,h,p,f){return t(),n("div",null,s)}var g=e(i,[["render",c]]);export{_ as __pageData,g as default};
+</code></pre></div>`,6),s=[a];function r(c,l,d,p,h,f){return t(),n("div",null,s)}var g=e(i,[["render",r]]);export{_ as __pageData,g as default};
