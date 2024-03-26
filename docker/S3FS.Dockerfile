@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=timzaak/spa-server
+ARG BASE_IMAGE=ghcr.io/fornetcode/spa-server
 ARG VERSION=1.2.6
 
 FROM ${BASE_IMAGE}:${VERSION} as Source

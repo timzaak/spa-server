@@ -348,7 +348,7 @@ pub mod service {
                 storage.save_file(domain, version, path, file_buf)?;
                 Ok(Response::default())
             } else {
-                Err(anyhow!("bad params, please check the api doc: https://github.com/timzaak/spa-server/blob/master/docs/guide/sap-server-api.md"))
+                Err(anyhow!("bad params, please check the api doc: https://github.com/fornetcode/spa-server/blob/master/docs/guide/sap-server-api.md"))
             }
         }
     }

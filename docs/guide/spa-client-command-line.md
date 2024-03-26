@@ -34,11 +34,11 @@ curl "http://$ADMIN_SERVER/update_version?domain=$DOMAIN" -H "Authorization: Bea
 We also release a docker image for spa-client.
 ```shell
 $ docker run --rm -it -v $CONFIG_FILE_PATH:/client.conf \
- timzaak/client spa-client -c /client.conf info
+ fornetcode/client spa-client -c /client.conf info
 ```
 
 ## Binary package
-You can get the packed binary in [Release Notes](https://github.com/timzaak/spa-server/releases).
+You can get the packed binary in [Release Notes](https://github.com/fornetcode/spa-server/releases).
 
 It now supports three format:
 
@@ -48,7 +48,7 @@ It now supports three format:
 
 ## Source Code
 ```shell
-git clone --recursive https://github.com/timzaak/spa-server
+git clone --recursive https://github.com/fornetcode/spa-server
 cargo build --package spa-client --release
 # you could get the binary from ./target/release directory
 ```

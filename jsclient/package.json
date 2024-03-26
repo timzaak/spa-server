@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "description": "node.js wrapper for spa-client",
   "main": "index.js",
-  "repository": "https://github.com/timzaak/spa-server",
+  "repository": "https://github.com/fornetcode/spa-server",
   "license": "MIT",
   "keywords": [
     "napi-rs",

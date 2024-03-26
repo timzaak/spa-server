@@ -6,7 +6,7 @@ export default defineConfig({
     description: 'deploy SPA so easy!',
     base: '/spa-server/',
     themeConfig: {
-        repo: 'timzaak/spa-server',
+        repo: 'fornetcode/spa-server',
         docsDir: 'docs',
         docsBranch: 'master',
         editLinks: true,
@@ -26,7 +26,7 @@ export default defineConfig({
             },
             {
                 text: 'Release Notes',
-                link: 'https://github.com/timzaak/spa-server/releases'
+                link: 'https://github.com/fornetcode/spa-server/releases'
             }
         ],
         sidebar: {

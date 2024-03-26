@@ -15,7 +15,7 @@
 - 每个域名可拥有独立的配置
 
 ## 文档
-中文 README 目前仅提供一些简易`快速使用`指引，更多内容可参考英文文档， 中文版会在后续有精力的时候做，其网站托管在 [GitHub Pages](https://timzaak.github.io/spa-server) 和 [Gitee Pages](https://timzaak.gitee.io/spa-server)，
+中文 README 目前仅提供一些简易`快速使用`指引，更多内容可参考英文文档， 中文版会在后续有精力的时候做，其网站托管在 [GitHub Pages](https://fornetcode.github.io/spa-server)，
 
 ## 服务跑起来
 

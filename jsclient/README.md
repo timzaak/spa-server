@@ -1,6 +1,6 @@
 # SPA-Client
 This is js wrapper for spa-client.
-More documents can find [here](https://timzaak.github.io/spa-server/guide/spa-client-npm-package.html)
+More documents can find [here](https://fornetcode.github.io/spa-server/guide/spa-client-npm-package.html)
 
 
 ### Operating Systems
