@@ -14,7 +14,6 @@ use std::sync::Arc;
 use warp::multipart::FormData;
 use warp::reply::Response;
 use warp::{Filter, Rejection};
-#[macro_use]
 use delay_timer::prelude::*;
 
 pub struct AdminServer {
@@ -58,7 +57,7 @@ impl AdminServer {
             SocketAddr::from_str(&format!("{}:{}", &self.conf.addr, &self.conf.port)).unwrap();
         warp::serve(self.routes()).run(bind_address).await;
         if let Some(cron_config) = &self.conf.deprecated_version_delete {
-            let mut delay_timer = DelayTimerBuilder::default()
+            let delay_timer = DelayTimerBuilder::default()
                 .tokio_runtime_by_default()
                 .build();
             delay_timer.add_task(build_async_job(
