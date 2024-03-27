@@ -9,11 +9,14 @@
     "rootDirs": ["src"],
     "resolveJsonModule": true,
     "strict": true,
+    "allowJs": true,
+    "checkJs": false,
     "moduleResolution": "node",
     "esModuleInterop": true
   },
   "include": [
-    "src"
+    "src",
+    "test",
   ],
   "exclude": [
     "node_modules",

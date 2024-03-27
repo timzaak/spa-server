@@ -1,10 +1,6 @@
 import axios, {AxiosInstance, AxiosResponse} from "axios";
 import fs from "fs";
 
-export function a(n:number) {
-    console.log('hello', n)
-}
-
 
 export interface SPAClientConfig {
     address: string
