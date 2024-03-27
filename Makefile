@@ -16,7 +16,7 @@ ifeq ($(VERSION), )
 	$(error VEDRSION is not set)
 else
 	DOCKER_BUILDKIT=1 docker build . -t="ghcr.io/fornetcode/spa-server:$(VERSION)"
-    docker push fornetcode/spa-server:$(VERSION)
+	docker push fornetcode/spa-server:$(VERSION)
 	cd docker
 	DOCKER_BUILDKIT=1 docker build . -f S3FS.Dockerfile -t="ghcr.io/fornetcode/spa-server:$(VERSION)-s3"
 	docker push ghcr.io/fornetcode/spa-server:$(VERSION)-s3
@@ -27,7 +27,7 @@ endif
 release-doc:
 	set -e
 	rm -fr docs/.vitepress/dist/*
-	yarn run docs:build
+	npm ci && npm run docs:build
 	cd docs/.vitepress/dist
 	git init
 	git add -A

@@ -27,7 +27,7 @@ ghcr.io/fornetcode/spa-server:latest
 npm install spa-client dotenv --save-dev
 ```
 2. add config for spa-client in the `.env` file
-```dotenv
+```
 # all config start with `SPA` for spa-client
 SPA_SERVER_ADDRESS=http://127.0.0.1:9000
 
