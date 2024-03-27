@@ -114,7 +114,7 @@ impl API {
         string_resp!(resp)
     }
 
-    pub fn reload_sap_server(&self) -> anyhow::Result<()> {
+    pub fn reload_spa_server(&self) -> anyhow::Result<()> {
         let resp = self.blocking_client.post(self.url("reload")).send()?;
         handle!(resp)
     }

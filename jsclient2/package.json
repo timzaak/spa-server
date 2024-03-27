@@ -1,0 +1,39 @@
+{
+  "name": "jsclient",
+  "version": "2.0.0",
+  "description": "js sdk for spa-server",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ForNetCode/spa-server.git"
+  },
+  "keywords": [
+    "spa-server"
+  ],
+  "author": "Timzaak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ForNetCode/spa-server/issues"
+  },
+  "homepage": "https://github.com/ForNetCode/spa-server#readme",
+  "bin": {
+    "spa-client": "bin/run-spa"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "dist"
+  ],
+  "dependencies": {
+    "axios": "^1.6.8",
+    "cmd-ts": "^0.13.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  }
+}
