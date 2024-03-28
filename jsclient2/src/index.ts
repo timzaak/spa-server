@@ -1,5 +1,6 @@
 import axios, {AxiosInstance, AxiosResponse} from "axios";
 import fs from "fs";
+import chalk from "chalk";
 
 
 export interface SPAClientConfig {
@@ -87,7 +88,7 @@ export default class SPAClient {
         return this.http.postForm('/file/upload', {
             domain,
             version,
-            path,
+            path: key,
             file: fileStream
         }).then((resp) => {
             if(resp.status != 200) {
@@ -95,11 +96,38 @@ export default class SPAClient {
             }
         })
     }
+    public async uploadFilesParallel(domain:string, version:number|undefined, path:string, parallel: number = 3) {
+        if(!(fs.existsSync(path) && fs.statSync(path).isDirectory())) {
+            throw `path:${path} is not directory or does not exists`
+        }
+        let realVersion:number;
+        if(!version) {
+            const positionResp = await this.getUploadPosition(domain)
+            if(positionResp.status === GetDomainPositionStatus.NewDomain) {
+                throw `domain:${domain} is new in server!`
+            }
+            realVersion = positionResp.version
+        } else {
+            realVersion = version
+        }
+        console.log(chalk.green("Begin to fetch server file metadata with md5, you may need to wait if there are large number of files."))
+        const serverMetaData = await this.getFileMetadata(domain, realVersion)
+        if(!serverMetaData.length) {
+            console.log(chalk.green(`There are ${serverMetaData.length} files already in server`))
+        }
+        const serverMetaDataMap = serverMetaData.reduce((result, item) => {
+            result[item.path] = item.md5
+            return result
+        }, {} as {[key:string]:string})
 
-    public getFileMetadata(domain:string, version:string) {
+        fs.readdirSync(path)
+
+    }
+
+    public getFileMetadata(domain:string, version:number) {
         return this.http.get('/files/metadata', {
             params: {domain, version}
-        }).then(resp<ShortMetaData>)
+        }).then(resp<ShortMetaData[]>)
     }
     public getUploadPosition(domain:string) {
         return this.http.get('/upload/position', {
